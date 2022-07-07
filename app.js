@@ -20,8 +20,8 @@ http
         const xml = fs.readFileSync(path.join(__dirname, './XMLs', `${fileName}.xml`));
         response.write(xml);
         response.end();
-        fs.unlink(path.join(__dirname, './XMLs', `${fileName}.xml`), () => {});
         fs.unlink(path.join(__dirname, './PDFs', `${fileName}.pdf`), () => {});
+        fs.unlink(path.join(__dirname, './XMLs', `${fileName}.xml`), () => {});
       });
     });
   })

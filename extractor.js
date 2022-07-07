@@ -6,7 +6,6 @@ module.exports = function extractXmlFromPdf(filename, cb) {
   const fileName = filename;
 
   const filePath = path.join(__dirname, './PDFs/', fileName);
-  const resultPath = path.join(__dirname, '/XMLs/', 'test.xml');
 
   const filenameWithExt = filePath.replace(/^.*[\\\/]/, ''); // - FileName with extension
   const fileNameArr = filenameWithExt.split('.');
@@ -21,7 +20,7 @@ module.exports = function extractXmlFromPdf(filename, cb) {
   const createXML = async function (src) {
     const attachment = await getAttachment(src);
     const unit8 = attachment['ZUGFeRD-invoice.xml']['content'];
-    const str = String.fromCharCode.apply(null, unit8);
+    const str = new TextDecoder('utf-8').decode(unit8);
     fs.writeFileSync(path.join(__dirname, '/XMLs/', `${nameWithoutExt}.xml`), str, 'utf8');
     cb();
     return;
