@@ -10,7 +10,6 @@ module.exports = function extractXmlFromPdf(filename, cb) {
   const filenameWithExt = filePath.replace(/^.*[\\\/]/, ''); // - FileName with extension
   const fileNameArr = filenameWithExt.split('.');
   const nameWithoutExt = fileNameArr[0]; // - FileName without extension
-  const xmlFileName = nameWithoutExt + '.xml';
 
   const getAttachment = async function (src) {
     const doc = await pdfjs.getDocument(src).promise;
