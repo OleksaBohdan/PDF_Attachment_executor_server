@@ -1,6 +1,7 @@
 const pdfjs = require('pdfjs-dist/build/pdf');
 const path = require('path');
 const fs = require('fs');
+const logger = require('pino');
 
 module.exports = function extractXmlFromPdf(filename, cb) {
   const fileName = filename;
@@ -20,7 +21,7 @@ module.exports = function extractXmlFromPdf(filename, cb) {
     const attachment = await getAttachment(src);
     const unit8 = attachment['ZUGFeRD-invoice.xml']['content'];
     const str = new TextDecoder('utf-8').decode(unit8);
-    fs.writeFileSync(path.join(__dirname, '/XMLs/', `${nameWithoutExt}.xml`), str, 'utf8');
+    fs.writeFileSync(path.join(__dirname, './XMLs/', `${nameWithoutExt}.xml`), str, 'utf8');
     cb();
     return;
   };
