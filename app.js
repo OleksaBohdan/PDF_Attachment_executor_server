@@ -13,7 +13,6 @@ try {
         const fileName = fileNameWithExt.split('.')[0];
         const fileExt = fileNameWithExt.split('.')[1];
         let body = [];
-        console.log(`Server got file ${fileNameWithExt}`);
         logger.info(`Server got file ${fileNameWithExt}`);
 
         if (request.headers['content-length'] == 0 || !fileNameWithExt || fileExt !== 'pdf') {
