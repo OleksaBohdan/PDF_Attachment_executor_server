@@ -1,4 +1,5 @@
-const pdfjs = require('pdfjs-dist/build/pdf');
+// const pdfjs = require('pdfjs-dist/build/pdf');
+const pdfjs = require('pdfjs-dist/legacy/build/pdf.js');
 const path = require('path');
 const fs = require('fs');
 const logger = require('pino');
