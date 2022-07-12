@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/802e8b0a-cce7-4943-ae20-2426e9dddee8/microsoft.web/sites/subscriptions/802e8b0a-cce7-4943-ae20-2426e9dddee8/resourceGroups/cereritas-8-apps/providers/Microsoft.Web/sites/pdf-attachments-extractor",
+  "appService.deploySubpath": "."
+}
