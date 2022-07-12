@@ -9,3 +9,12 @@ server will return:
 
 \*Important notes:
 xml attached file should be named "ZUGFeRD-invoice.xml"
+
+---
+
+For Herocu you need add node version in package.json:
+"engines":{
+"node":"17.x"
+}
+
+---
